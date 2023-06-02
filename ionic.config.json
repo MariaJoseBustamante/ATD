@@ -1,0 +1,7 @@
+{
+  "name": "ATD",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
