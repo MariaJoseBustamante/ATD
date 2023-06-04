@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -8,6 +8,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
 import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   imports: [
@@ -19,4 +20,6 @@ import { RouterModule } from '@angular/router';
   ],
   declarations: [HomePage]
 })
-export class HomePageModule {}
+export class HomePageModule { }
+
+

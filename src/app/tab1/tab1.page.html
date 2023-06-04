@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Cámara
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,5 +13,12 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
-</ion-content>
+    <ion-fab-button (click)="onClick()">
+      <ion-icon name="camera-outline"></ion-icon>
+    </ion-fab-button>
+
+    <ion-fab-button (click)="onSelecteFile()">
+      <ion-icon name="image-outline"></ion-icon>
+    </ion-fab-button>
+    <app-explore-container name="Tab 1 page"></app-explore-container>
+  </ion-content>
