@@ -29,7 +29,15 @@
       <ion-list>
         <ion-item [routerLink]="['/introduccion']">LenguApp</ion-item>
         <ion-item [routerLink]="['/home']">Indicaciones</ion-item>
-        <ion-item [routerLink]="['/tabs/tab1']">Tomar foto</ion-item>
+        <ion-item [routerLink]="['/foto']">Tomar foto</ion-item>
+        <ion-item [routerLink]="['/procesamiento']">Imágenes procesadas</ion-item>
+        <ion-item [routerLink]="['/tabs/tab1']">Color</ion-item>
+        <ion-item [routerLink]="['/tabs/tab2']">Saburra</ion-item>
+        <ion-item [routerLink]="['/tabs/tab3']">Características</ion-item>
+        <ion-item [routerLink]="['/tabs/tab4']">Forma</ion-item>
+        <ion-item [routerLink]="['/resultado']">Resultado</ion-item>
+        <ion-item [routerLink]="['/final']">Gracias</ion-item>
+
       </ion-list>
     </ion-content>
   </ion-menu>
@@ -62,7 +70,7 @@
       <ion-item>No ingerir comidas con colorantes antes de tomar la fotografía.</ion-item>
     </ion-list>
   </ion-toolbar>
-  <ion-button  [routerLink]="[ '/tabs/tab1' ]" expand="block">Siguiente</ion-button>
+  <ion-button  [routerLink]="[ '/foto' ]" expand="block">Siguiente</ion-button>
 </ion-content>
 
 

@@ -1,6 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>resultado</ion-title>
+    <ion-title class="ion-text-center">RESULTADO</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon [routerLink]="['/tabs/tab4']" name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +13,6 @@
       <ion-title size="large">resultado</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-button [routerLink]="['/final']" expand="block">Finalizar</ion-button>
 </ion-content>
+

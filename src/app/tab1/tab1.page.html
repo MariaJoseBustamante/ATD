@@ -1,9 +1,8 @@
+
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      <ion-text color="tertiary">
-        <h3>TOMAR FOTO</h3>
-      </ion-text>
+    <ion-title class="ion-text-center">
+      COLOR
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,39 +13,6 @@
       <ion-title size="large">Tab 1</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <ion-fab-button (click)="getPicture()">
-    <ion-icon name="camera-outline"></ion-icon>
-  </ion-fab-button>
-
-
-
-  <ion-card *ngIf="photo">
-    <ion-card-content>
-      <img [src]="photo" />
-    </ion-card-content>
-
-  </ion-card>
-  <ion-card *ngIf="photo">
-    <ion-card-content>
-    <p>{{data|json}} </p>
-    </ion-card-content>
-
-  </ion-card>
-  <ion-content>
-    <div class="ion-padding">
-      <div class="ion-text-center ion-margin-bottom">
-        <ion-button  [routerLink]="[ '/tabs/tab2' ]" expand="block">siguiente</ion-button>
-      </div>
-    </div>
-  </ion-content>
-
-  <ion-toast
-    [isOpen]="isToastOpen"
-    [message]="message"
-    [duration]="5000"
-  ></ion-toast>
-
-
+  <app-explore-container name="Tab 1 page"></app-explore-container>
 
 </ion-content>
