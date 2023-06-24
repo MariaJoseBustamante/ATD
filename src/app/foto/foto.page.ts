@@ -5,7 +5,7 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Capacitor } from '@capacitor/core';
 import { TongueService } from '../services/tongue.service';
-
+import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-foto',
   templateUrl: './foto.page.html',
@@ -23,7 +23,7 @@ export class FotoPage implements OnInit {
   public file:any;
 
 
-  constructor(private platform: Platform, private sanitizer: DomSanitizer, private tongueservice:TongueService) {}
+  constructor(private platform: Platform, private sanitizer: DomSanitizer, private tongueservice:TongueService, private messageService: MessageService) {}
 
   ngOnInit(): void {
     if (
@@ -59,14 +59,15 @@ export class FotoPage implements OnInit {
   }
 
   enviarfoto(){
-    let data={
-      images:this.file
+    if(!this.photo){
+      this.mensajeDeError('Suba una imagen');
+      return
     }
-    console.log(data) 
-    
-    this.tongueservice.enviarimagen(data).subscribe(
+
+    this.tongueservice.enviarImagenTest(this.file).subscribe(
       res=>{
         console.log(res)
+        this.messagesConfirmacion('Se subio la imagen con exito');
       }
     )
   }
@@ -108,5 +109,21 @@ export class FotoPage implements OnInit {
       const file = await Filesystem.readFile({ path: path });
       return file.data;
     }
+  }
+
+  private messagesConfirmacion(mensaje:string){
+    this.messageService.add({
+      severity:'success',
+      summary:'Exitoso',
+      detail:mensaje,
+    })
+  }
+  
+  private mensajeDeError(mensaje:string){
+    this.messageService.add({
+      severity:'error',
+      summary:'Error',
+      detail:mensaje,
+    })
   }
 }

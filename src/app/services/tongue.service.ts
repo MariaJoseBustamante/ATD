@@ -10,9 +10,12 @@ export class TongueService {
 
   constructor(private http: HttpClient) { }
 
-  enviarimagen (data:any){
-    console.log(data)
-    return this.http.post(urlbackend+"upload/", data)
+  enviarImagenTest(data:any){
+    console.log(data);
+    let formData = new FormData();
+    formData.append("images", data);
+    console.log(formData);
+    return this.http.post(urlbackend+"upload-second/",formData);
   }
 
 }

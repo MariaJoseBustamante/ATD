@@ -11,7 +11,7 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">fotito</ion-title>
+      <ion-title size="large">Tome una foto </ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -29,7 +29,7 @@
   </ion-card>
   <ion-card *ngIf="photo">
     <ion-card-content>
-    <p>{{data|json}} </p>
+      <p>{{data|json}} </p>
     </ion-card-content>
 
   </ion-card>
@@ -41,14 +41,8 @@
     </div>
   </ion-content>
 
-  <ion-toast
-    [isOpen]="isToastOpen"
-    [message]="message"
-    [duration]="5000"
-  ></ion-toast>
+  <ion-toast [isOpen]="isToastOpen" [message]="message" [duration]="5000"></ion-toast>
 
 
 
 </ion-content>
-
-
