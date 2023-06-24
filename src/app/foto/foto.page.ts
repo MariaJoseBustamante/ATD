@@ -4,11 +4,13 @@ import { Platform } from '@ionic/angular';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Capacitor } from '@capacitor/core';
+import { TongueService } from '../services/tongue.service';
 
 @Component({
   selector: 'app-foto',
   templateUrl: './foto.page.html',
   styleUrls: ['./foto.page.scss'],
+  providers:[TongueService]
 })
 export class FotoPage implements OnInit {
   @ViewChild('filePicker', { static: false })
@@ -18,9 +20,10 @@ export class FotoPage implements OnInit {
   public isToastOpen = false;
   public message?: string;
   public data: any;
+  public file:any;
 
 
-  constructor(private platform: Platform, private sanitizer: DomSanitizer) {}
+  constructor(private platform: Platform, private sanitizer: DomSanitizer, private tongueservice:TongueService) {}
 
   ngOnInit(): void {
     if (
@@ -53,8 +56,21 @@ export class FotoPage implements OnInit {
     this.message = 'Take photo success ' + JSON.stringify(image);
 
     // Convert Blob to File
-    const file = await this.blobToFile(this.photo as any, 'imagen.jpg');
-    console.log('Converted file:', file);
+    this.file = await this.blobToFile(this.photo as any, 'imagen.jpg');
+    console.log('Converted file:', this.file);
+  }
+
+  enviarfoto(){
+    let data={
+      images:this.file
+    }
+    console.log(data) 
+    
+    this.tongueservice.enviarimagen(data).subscribe(
+      res=>{
+        console.log(res)
+      }
+    )
   }
 
   async saveImage(imagePath: string) {
