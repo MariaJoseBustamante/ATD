@@ -47,6 +47,8 @@ export class FotoPage implements OnInit {
     console.log('image', image.webPath);
     this.photo=image.webPath
 
+
+
     this.isToastOpen = true;
     this.message = 'Take photo success ' + JSON.stringify(image);
 
@@ -59,7 +61,7 @@ export class FotoPage implements OnInit {
     const base64Data = await this.readAsBase64(imagePath);
 
     if (base64Data) {
-      const fileName = new Date().getTime() + '.jpeg';
+      const fileName = new Date().getTime() + '.jpg';
       const savedFile = await Filesystem.writeFile({
         path: fileName,
         data: base64Data,
