@@ -10,7 +10,7 @@ import { MessageService } from 'primeng/api';
   selector: 'app-foto',
   templateUrl: './foto.page.html',
   styleUrls: ['./foto.page.scss'],
-  providers:[TongueService]
+  providers: [TongueService]
 })
 export class FotoPage implements OnInit {
   @ViewChild('filePicker', { static: false })
@@ -20,10 +20,12 @@ export class FotoPage implements OnInit {
   public isToastOpen = false;
   public message?: string;
   public data: any;
-  public file:any;
+  public file: any;
+
+  public photos: any[] = [];
 
 
-  constructor(private platform: Platform, private sanitizer: DomSanitizer, private tongueservice:TongueService, private messageService: MessageService) {}
+  constructor(private platform: Platform, private sanitizer: DomSanitizer, private tongueservice: TongueService, private messageService: MessageService) { }
 
   ngOnInit(): void {
     if (
@@ -32,12 +34,23 @@ export class FotoPage implements OnInit {
     ) {
       this.isDesktop = true;
     }
+    this.loadDataImage();
+  }
+
+  async loadDataImage() {
+    let imagaList = await this.tongueservice.getListImages().subscribe(
+      res => {
+        console.log("Se imprime la lista de imagenes");
+        console.log(res);
+      }
+    )
+
   }
 
   async getPicture() {
-    console.log("plataforma",Capacitor.getPlatform())
+
     this.isToastOpen = false;
-    console.log('getPicture', this.isDesktop);
+
 
     // Take a photo
     const image: any = await Camera.getPhoto({
@@ -45,10 +58,11 @@ export class FotoPage implements OnInit {
       source: CameraSource.Camera,
       quality: 100,
     });
-    this.data=image;
+
+    this.data = image;
 
     console.log('image', image.webPath);
-    this.photo=image.webPath
+    this.photo = image.webPath
 
 
 
@@ -60,14 +74,14 @@ export class FotoPage implements OnInit {
     console.log('Converted file:', this.file);
   }
 
-  enviarfoto(){
-    if(!this.photo){
+  enviarfoto() {
+    if (!this.file) {
       this.mensajeDeError('Suba una imagen');
       return
     }
 
     this.tongueservice.enviarImagenTest(this.file).subscribe(
-      res=>{
+      res => {
         console.log(res)
         this.messagesConfirmacion('Se subio la imagen con exito');
       }
@@ -113,19 +127,75 @@ export class FotoPage implements OnInit {
     }
   }
 
-  private messagesConfirmacion(mensaje:string){
+  private messagesConfirmacion(mensaje: string) {
     this.messageService.add({
-      severity:'success',
-      summary:'Exitoso',
-      detail:mensaje,
+      severity: 'success',
+      summary: 'Exitoso',
+      detail: mensaje,
     })
   }
-  
-  private mensajeDeError(mensaje:string){
+
+  private mensajeDeError(mensaje: string) {
     this.messageService.add({
-      severity:'error',
-      summary:'Error',
-      detail:mensaje,
+      severity: 'error',
+      summary: 'Error',
+      detail: mensaje,
     })
   }
+
+  async capturaImagen(event: any) {
+    const image: any = await Camera.getPhoto({
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Camera,
+      quality: 100,
+    });
+
+
+    this.photos.unshift({
+      filepath: "soon...",
+      webviewPath: image.webPath
+    });
+
+    console.log('la foto que se tomo', this.photos)
+
+    console.log('esta es la imagen', image);
+    const file = new Blob([image], { type: 'image/jpg' });
+    const file_img = this.blobToFileTesting(file, 'image.jpg');
+    console.log(file_img);
+    this.file = file_img;
+
+  }
+
+  blobToFileTesting(blob:any, fileName:any) {
+    // Create a new File object
+    const file = new File([blob], fileName, { type: blob.type });
+    return file;
+  }
+
+
+  handleImageUpload(event: any) {
+    this.messagesConfirmacion('Se selecciono una imagen')
+    const file: File = event.target.files[0]; // Accede al primer archivo seleccionado
+    this.messagesConfirmacion(file.toString());
+    
+    if (file && file.type.startsWith('image/')) {
+      // El archivo es una imagen válida
+      // Aquí puedes realizar las operaciones necesarias con el archivo de imagen, como cargarlo en un servidor o procesarlo localmente
+      console.log('Archivo de imagen seleccionado:', file);
+      this.file = file;
+      
+    this.tongueservice.enviarImagenTest(this.file).subscribe(
+      res => {
+        console.log(res)
+        this.messagesConfirmacion('Se subio la imagen con exito');
+      }
+    )
+    } else {
+      // El archivo no es una imagen válida
+      console.error('El archivo seleccionado no es una imagen válida');
+      this.mensajeDeError('El archivo seleccionado no es una imagen válida');
+    }
+  }
+
+
 }

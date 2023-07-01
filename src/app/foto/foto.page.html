@@ -14,8 +14,14 @@
       <ion-title size="large">Tome una foto </ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-item>
+    <ion-input type="file" (change)="handleImageUpload($event)" label="Default input"></ion-input> 
+    <ion-card-content>
+      <p>{{file}} </p>
+    </ion-card-content>
+  </ion-item>
 
-  <ion-fab-button (click)="getPicture()">
+  <ion-fab-button (click)=" capturaImagen($event)">
     <ion-icon name="camera-outline"></ion-icon>
   </ion-fab-button>
 
