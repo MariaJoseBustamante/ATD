@@ -10,5 +10,20 @@
       <ion-title size="large">procesamiento</ion-title>
     </ion-toolbar>
   </ion-header>
+
   <ion-button  [routerLink]="[ '/tabs/tab1' ]" expand="block">Siguiente</ion-button>
 </ion-content>
+
+
+<!-- <ng-container *ngIf="data">
+  <div class="card-container">
+    <div class="card" *ngFor="let image of data.images">
+      <img [src]="image.url" alt="Image" class="card-image">
+      <div class="card-details">
+        <h4>{{ image.name }}</h4>
+        <p>{{ image.description }}</p>
+      </div>
+    </div>
+  </div>
+</ng-container> -->
+

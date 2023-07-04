@@ -15,16 +15,17 @@
     </ion-toolbar>
   </ion-header>
   <ion-item>
-    <ion-input type="file" (change)="handleImageUpload($event)" label="Default input"></ion-input> 
-    <ion-card-content>
-      <p>{{file}} </p>
-    </ion-card-content>
+    <!-- <ion-input type="file" (change)="handleImageUpload($event)" label="Default input"></ion-input> -->
+
   </ion-item>
 
-  <ion-fab-button (click)=" capturaImagen($event)">
+  <!-- <ion-fab-button (click)=" capturaImagen($event)">
+    <ion-icon name="camera-outline"></ion-icon>
+  </ion-fab-button> -->
+
+  <ion-fab-button (click)="getPicture()">
     <ion-icon name="camera-outline"></ion-icon>
   </ion-fab-button>
-
 
 
   <ion-card *ngIf="photo">
@@ -32,7 +33,7 @@
       <img [src]="photo" />
     </ion-card-content>
   </ion-card>
-  <ion-card *ngIf="photo">
+  <ion-card *ngIf="data">
     <ion-card-content>
       <p>{{data|json}} </p>
     </ion-card-content>
@@ -41,7 +42,10 @@
   <ion-content>
     <div class="ion-padding">
       <div class="ion-text-center ion-margin-bottom">
-        <ion-button (click)="enviarfoto()" expand="block">siguiente</ion-button>
+         <ion-button id="open-loading" (click)="enviarfoto()" expand="block">Enviar foto</ion-button>
+        <ion-button  (click)="enviarfoto2()" expand="block">imagenes</ion-button>
+        <ion-loading  trigger="open-loading" message="Procesando imagen..." [duration]="isLoading ? 8000 : 0"></ion-loading>
+
       </div>
     </div>
   </ion-content>
