@@ -112,17 +112,6 @@ export class FotoPage implements OnInit {
     });
   }
 
-  public async enviarfoto2() {
-    try {
-      let resp = await firstValueFrom(this.tongueservice.getListImages());
-      console.log(resp)
-      this.data = resp;
-    } catch (error: any) {
-      console.log(error);
-      this.mensajeDeError(JSON.stringify(error));
-      this.data = error;
-    }
-  }
 }
 
 

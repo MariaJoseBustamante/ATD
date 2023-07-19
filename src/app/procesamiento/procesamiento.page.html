@@ -3,8 +3,20 @@
     <ion-title>procesamiento</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
+
+  <ng-container *ngIf="data">
+    <div class="card-container">
+      <div *ngFor="let item of data" class="card">
+        <a [routerLink]="[ '/tabs/tab1',item.id ]">
+          <img [src]="item.image" alt="Image">
+
+        </a>
+      </div>
+    </div>
+  </ng-container>
+
+
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">procesamiento</ion-title>
@@ -14,8 +26,7 @@
   <ion-button  [routerLink]="[ '/tabs/tab1' ]" expand="block">Siguiente</ion-button>
 </ion-content>
 
-
-<!-- <ng-container *ngIf="data">
+  <!-- <ng-container *ngIf="data">
   <div class="card-container">
     <div class="card" *ngFor="let image of data.images">
       <img [src]="image.url" alt="Image" class="card-image">
@@ -26,4 +37,6 @@
     </div>
   </div>
 </ng-container> -->
+
+
 

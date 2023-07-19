@@ -4,7 +4,17 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AtdService {
-  accesoFacturacion = 'https://login.example.com';
+  //accesoFacturacion = 'https://login.example.com';
+
+  private _data:any;
 
   constructor() { }
+
+  public get data(){
+    return this._data;
+  }
+
+  public set data(data:any){
+    this._data = data;
+  }
 }

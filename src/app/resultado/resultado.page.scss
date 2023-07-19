@@ -1,0 +1,34 @@
+ion-range::part(tick) {
+  background: #a2d2ff;
+}
+
+ion-range::part(tick-active) {
+  background: #bde0fe;
+}
+
+
+ion-range::part(pin)::before {
+  content: none;
+}
+
+ion-range::part(knob) {
+  background: #ffc8dd;
+}
+
+ion-range::part(bar) {
+  background: #a2d2ff;
+}
+
+ion-range::part(bar-active) {
+  background: #bde0fe;
+}
+
+.estilo{
+  margin: 0% 45px;
+  opacity: 0.9;
+}
+
+ion-card{
+  margin-bottom: 0%;
+
+}

@@ -36,4 +36,21 @@ export class TongueService {
     return this.http.get(urlbackend+"list-images/",{ headers: headers });
   }
 
+  getListImagesdetalle(id:number){
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+
+    return this.http.get(urlbackend+"image-by-ID/"+id,{ headers: headers });
+  }
+
+  getdetalleColor(id:number){
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+
+    return this.http.get(urlbackend+"color-by-ID/"+id,{ headers: headers });
+  }
+
+
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SystemService } from '../services/system.service';
 
 @Component({
   selector: 'app-tab4',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tab4.page.scss'],
 })
 export class Tab4Page implements OnInit {
+  constructor(
 
-  constructor() { }
+  )
+  { }
 
   ngOnInit() {
   }
