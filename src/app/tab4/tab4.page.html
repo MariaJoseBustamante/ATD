@@ -1,10 +1,19 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title class="ion-text-center">FORMA</ion-title>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <div  class="ion-text-center">
+    <h1 class="textColor">FORMA</h1>
+  </div>
+  <ion-card>
+    <ion-card-content>
+      <p>En esta sección puede asociar una de las imágenes con la forma que más se asemeje a su lengua.
+      </p>
+    </ion-card-content>
+  </ion-card>
   <ion-grid>
     <ion-row>
       <ion-col>
@@ -39,23 +48,12 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+  <ion-card>
+    <ion-card-title><span style="color: violet; padding: 10px 0px;">Nota:</span></ion-card-title>
+    <p style="font-size: 14px;">
+      La forma de su lengua no tiene relevancia en su estado de salud debido a que no se relaciona con efermedades. El tipo de lengua está relacionado meramente a factores genéticos.
+    </p>
+  </ion-card>
 
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-list>
-        <ion-item>
-          <ion-select aria-label="tongue" placeholder="Seleccione la forma de su lengua">
-            <ion-select-option value="rectangular">Rectangular</ion-select-option>
-            <ion-select-option value="circular">Circular</ion-select-option>
-            <ion-select-option value="elipse">Elipse</ion-select-option>
-            <ion-select-option value="triangular">Triangular</ion-select-option>
-            <ion-select-option value="martillo">Forma de martillo</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-list>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-button [routerLink]="['/resultado']" expand="block">Ver resultados</ion-button>
 </ion-content>
 

@@ -10,7 +10,7 @@
   <ion-header collapse="condense">
 
     <ion-toolbar>
-      <ion-title size="large">introduccion</ion-title>
+      <ion-title   class="textColor ion-text-center" size="large">LENGUAPP</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -26,7 +26,11 @@
 
     Nuestra App es una herramienta útil tanto para profesionales de la salud como para usuarios en general. Es de gran utilidad para monitorear su salud bucal de manera regular, detectando posibles signos de preocupación y así poder tomar medidas preventivas.
   </ion-card-content>
-  <ion-card-subtitle class="ion-text-center" color="tertiary">CONTÁCTANOS</ion-card-subtitle>
+
+  <div>
+    <div  class="ion-text-center converButton" color="tertiary">CONTÁCTANOS</div >
+  </div>
+
 
   <ion-card-content>
     <ion-grid>
@@ -35,19 +39,18 @@
           <ion-icon name="mail-outline"></ion-icon>
         </ion-col>
         <ion-col>
-          nbutamanteg@est.ups.edu.ec
+          <a href="mailto:nbutamanteg@est.ups.edu.ec">nbutamanteg@est.ups.edu.ec</a>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col size="auto" class="ion-text-center">
           <ion-icon name="mail-outline"></ion-icon>
         </ion-col>
-        <ion-col>
-          pperaltaf@est.ups.edu.ec
-        </ion-col>
+        <ion-col >
+          <a href="mailto:pperaltaf@est.ups.edu.ec">pperaltaf@est.ups.edu.ec</a></ion-col>
       </ion-row>
     </ion-grid>
   </ion-card-content>
 
-  <ion-button  [routerLink]="[ '/home' ]" expand="block">Atrás</ion-button>
+  <ion-button class="colorB" [routerLink]="['']" expand="block">REGRESAR</ion-button>
 </ion-content>

@@ -1,0 +1,16 @@
+@import "../../theme/variables.scss";
+
+
+ion-text{
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--miColor);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.textName{
+  font-size: 12px;
+  font-weight: 600;
+}

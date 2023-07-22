@@ -8,7 +8,9 @@
 
 <ion-content [fullscreen]="true">
   <ion-card class="ion-text-center">
-    <ion-card-title>COLOR</ion-card-title>
+    <ion-card-title class="textColor">SABURRA
+      <ion-icon (click)="seeInfo = !seeInfo" name="help-outline" style="border-radius: 50%; background-color: orange"></ion-icon>
+    </ion-card-title>
     <img  [src]="data.saburra" alt="Image"/>
   </ion-card>
   <ion-card>
@@ -16,9 +18,18 @@
       El porcentaje de saburra presente en su lengua es: {{ data.porcentaje }}
     </ion-card-content>
   </ion-card>
+  <ion-card>
+    <ion-card-content>
+      Si el porcentaje de saburra es mayor al 50% puede tratarse de problemas en su salud.
+    </ion-card-content>
+  </ion-card>
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <div *ngIf="seeInfo" style="padding: 10px 15px; ">
+        <p style="font-size: 14px;">
+          La saburra es la fina capa que cubre la lengua y que habitualmente tiene un color tenue blanquecino o blanco transparente.
+        </p>
+      </div>
     </ion-toolbar>
   </ion-header>
 </ion-content>

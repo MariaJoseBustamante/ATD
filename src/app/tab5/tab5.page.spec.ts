@@ -1,12 +1,12 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
-import { ResultadoPage } from './resultado.page';
+import { Tab5Page } from './tab5.page';
 
-describe('ResultadoPage', () => {
-  let component: ResultadoPage;
-  let fixture: ComponentFixture<ResultadoPage>;
+describe('Tab5Page', () => {
+  let component: Tab5Page;
+  let fixture: ComponentFixture<Tab5Page>;
 
   beforeEach(async(() => {
-    fixture = TestBed.createComponent(ResultadoPage);
+    fixture = TestBed.createComponent(Tab5Page);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
@@ -15,3 +15,4 @@ describe('ResultadoPage', () => {
     expect(component).toBeTruthy();
   });
 });
+

@@ -1,47 +1,36 @@
-
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-icon [routerLink]="[ '/procesamiento' ]" name="arrow-back-outline"></ion-icon>
-    <ion-title class="ion-text-center">
-      COLOR
-    </ion-title>
+    <ion-icon
+      [routerLink]="[ '/procesamiento' ]"
+      name="arrow-back-outline"
+    ></ion-icon>
+
+    <ion-title class="ion-text-center"> COLOR </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="data"[fullscreen]="true">
-
-  <ion-grid>
-    <ion-row>
-      <ion-col class="ion-text-center">
-        <ion-card>
-          <ion-card-title>IMAGEN ORIGINAL</ion-card-title>
-          <img [src]="data.name_recortada" alt="Image" width="200" height="100" />
-        </ion-card>
-      </ion-col>
-      <ion-col class="ion-text-center">
-        <ion-card>
-          <ion-card-title>COLOR DOMINANTE</ion-card-title>
-          <img [src]="data.color_dominante" alt="Image" width="100" />
-        </ion-card>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col class="ion-text-center">
-        <ion-card>
-          <ion-card-title>Gama de colores de su lengua</ion-card-title>
-          <img [src]="data.paleta_colores" alt="Image" width="200" />
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+<ion-content *ngIf="data" fullscreen>
+  <ion-card>
+    <ion-card-title class="textColor ion-text-center" size="large" >IMAGEN ORIGINAL</ion-card-title>
+    <ion-card-content style="min-height: 400px; display: flex; align-items: center" >
+      <div >
+        <img [src]="data.name_recortada" alt="Image" width="500" height="200" />
+      </div>
+    </ion-card-content>
+  </ion-card>
 
 
+  <ion-card>
+    <div style="padding-top: 10px; padding-bottom: 10px" class="ion-text-center">
+      <ion-card-title class="textColor ion-text-center" size="large">COLOR DOMINANTE</ion-card-title>
+      <img [src]="data.color_dominante" alt="Image" width="100" class="ion-text-center" />
+    </div>
+  </ion-card>
 
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <!-- <ion-title size="large">Tab 1</ion-title> -->
-    </ion-toolbar>
-  </ion-header>
-
-
+  <ion-card>
+    <div style="padding-top: 10px; padding-bottom: 10px" class="ion-text-center">
+      <ion-card-title class="textColor ion-text-center" size="large">Gama de colores de su lengua</ion-card-title>
+      <img [src]="data.paleta_colores" alt="Image" width="200" />
+    </div>
+  </ion-card>
 </ion-content>

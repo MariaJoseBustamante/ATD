@@ -1,29 +1,48 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>procesamiento</ion-title>
+    <ion-icon [routerLink]="[ '/foto' ]" name="arrow-back-outline"></ion-icon>
+    <ion-title>Imágenes procesadas</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
 
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title class="textColor ion-text-center" size="large">Imágenes Procesadas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div>
+    <ion-card>
+      <ion-card-content>
+        Haga clic en una imagen para ver sus resultados
+      </ion-card-content>
+    </ion-card>
+  </div>
   <ng-container *ngIf="data">
     <div class="card-container">
       <div *ngFor="let item of data" class="card">
-        <a [routerLink]="[ '/tabs/tab1',item.id ]">
-          <img [src]="item.image" alt="Image">
+        <div style="display: flex; justify-content: space-between;align-items: center;">
+          <div style="padding: 5px 10px;">
+            <a [routerLink]="[ '/tabs/tab1',item.id ]">
+              <img [src]="item.image" alt="Image" style="max-width: 180px;">
+            </a>
+          </div>
+          <div style="padding: 5px 10px; flex: 1;">
+            <div class="borderDiv" style="display: flex; flex-direction: column;">
+              <ion-text class="textName textColor">Fecha:<span style="margin-left: 10px;">{{convertirFecha(item.created_at)}}</span></ion-text>
+              <ion-text class="textName textColor">Hora:<span style="margin-left: 10px;">{{obtenerHora(item.created_at)}}</span></ion-text>
+            </div>
+          </div>
 
-        </a>
+        </div>
+
+
+
       </div>
     </div>
   </ng-container>
 
 
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">procesamiento</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-button  [routerLink]="[ '/tabs/tab1' ]" expand="block">Siguiente</ion-button>
 </ion-content>
 
   <!-- <ng-container *ngIf="data">

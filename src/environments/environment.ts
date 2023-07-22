@@ -3,9 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  urlbackend:"http://192.168.100.18:8000/",
-  //urlbackend:"http://172.16.219.116:8000/",
+  //urlbackend:"http://192.168.100.18:8000/",
+  //urlbackend:"http://192.168.71.58:8000/",
   //urlbackend:"http://192.168.1.45:8000/",
+  urlbackend:"http://192.168.0.185:8000/",
   production: false
 };
 

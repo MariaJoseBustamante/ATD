@@ -28,3 +28,20 @@
 
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
+
+
+
+ion-button {
+    --background: var(--miColor);
+}
+
+.textColor {
+  color: var(--miColor);
+}
+.converButton  {
+  padding: 10px 0px;
+
+  border: solid 2px var(--miColor);
+  width: 70%;
+  margin: auto;
+}

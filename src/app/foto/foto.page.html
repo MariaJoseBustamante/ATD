@@ -1,17 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-icon
+        [routerLink]="['/home']"
+        name="arrow-back-outline"
+      ></ion-icon>
     <ion-title>
-      <ion-text color="tertiary">
-        <h3>TOMAR FOTO</h3>
+      <ion-text class="textColor">
+        <ion-title class="textColor ion-text-center" size="large">TOME UNA FOTO </ion-title>
       </ion-text>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content  [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tome una foto </ion-title>
+
     </ion-toolbar>
   </ion-header>
   <ion-item>
@@ -23,8 +27,13 @@
     <ion-icon name="camera-outline"></ion-icon>
   </ion-fab-button> -->
 
+  <ion-card>
+    <ion-card-content>
+      Para capturar la foto de su legua seleccione el ícono azul de la cámara.
+    </ion-card-content>
+  </ion-card>
   <ion-fab-button (click)="getPicture()">
-    <ion-icon name="camera-outline"></ion-icon>
+    <ion-icon  name="camera-outline"></ion-icon>
   </ion-fab-button>
 
 
@@ -44,14 +53,14 @@
       <div class="ion-text-center ion-margin-bottom">
          <ion-button id="open-loading" (click)="enviarfoto()" expand="block">Enviar foto</ion-button>
         <!-- <ion-button  (click)="enviarfoto2()" expand="block">imagenes</ion-button> -->
-        <ion-loading  trigger="open-loading" message="Procesando imagen..." [duration]="isLoading ? 26000 : 0"></ion-loading>
+        <ion-loading  trigger="open-loading" message="Procesando imagen..." [duration]="isLoading ? 25000 : 0"></ion-loading>
 
       </div>
     </div>
+
+    <ion-button class="colorB ion-text-center ion-margin-bottom" [routerLink]="['/procesamiento']" expand="block">Imágenes procesadas</ion-button>
+
   </ion-content>
 
   <ion-toast [isOpen]="isToastOpen" [message]="message" [duration]="5000"></ion-toast>
-
-
-
 </ion-content>

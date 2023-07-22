@@ -1,64 +1,52 @@
-<ion-header [translucent]="true">
-
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding" >
+    <ion-list>
+      <ion-item [routerLink]="['/introduccion']">LenguApp</ion-item>
+      <ion-item [routerLink]="['/foto']">Tomar foto</ion-item>
+      <ion-item [routerLink]="['/procesamiento']">Imágenes procesadas</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
     <ion-toolbar>
       <ion-buttons slot="end">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
-      <ion-title class="ion-text-start">Menu</ion-title>
+      <ion-title></ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-content class="ion-padding">
 
-  <ion-menu side="end" contentId="main-content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Contenido</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content>
+    <h1 style="font-size: medium;" class="textColor ion-text-center">INDICACIONES DE USO</h1>
+
+    <ion-toolbar>
       <ion-list>
-        <ion-item [routerLink]="['/introduccion']">LenguApp</ion-item>
-        <ion-item [routerLink]="['/home']">Indicaciones</ion-item>
-        <ion-item [routerLink]="['/foto']">Tomar foto</ion-item>
-        <ion-item [routerLink]="['/procesamiento']">Imágenes procesadas</ion-item>
-
-
+        <ion-item>Limpiar el lente de la cámara.</ion-item>
+        <ion-item>Evitar usar el flash.</ion-item>
+        <ion-item>Usar una fuente de luz natural.</ion-item>
+        <ion-item>No tomar fotos en la noche.</ion-item>
+        <ion-item>La foto debe ser de manera vertical.</ion-item>
+        <ion-item
+          >Procurar simetría, es decir, evitar imágenes inclinadas.</ion-item
+        >
+        <ion-item
+          >Enfoca solo tu boca, la lengua debe estar extendida y estirada hacia
+          el exterior del labio inferior.</ion-item
+        >
+        <ion-item>Lavarse la boca 15 min antes.</ion-item>
+        <ion-item
+          >No ingerir comidas con colorantes antes de tomar la
+          fotografía.</ion-item
+        >
       </ion-list>
-    </ion-content>
-  </ion-menu>
+      <ion-button class="colorB" [routerLink]="['']" expand="block">REGRESAR</ion-button>
+    </ion-toolbar>
 
-  <div class="ion-page" id="main-content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-buttons slot="end">
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-header>
-  </div>
-
-  <ion-toolbar>
-
-    <ion-title >INDICACIONES DE USO</ion-title>
-  </ion-toolbar>
-
-  <ion-toolbar>
-    <ion-list>
-      <ion-item>Limpiar el lente de la cámara.</ion-item>
-      <ion-item>Evitar usar el flash.</ion-item>
-      <ion-item>Usar una fuente de luz natural.</ion-item>
-      <ion-item>No tomar fotos en la noche.</ion-item>
-      <ion-item>La foto debe ser de manera vertical.</ion-item>
-      <ion-item>Procurar simetría, es decir, evitar imágenes inclinadas.</ion-item>
-      <ion-item>Enfoca solo tu boca, la lengua debe estar extendida y estirada hacia el exterior del labio inferior.</ion-item>
-      <ion-item>Lavarse la boca 15 min antes.</ion-item>
-      <ion-item>No ingerir comidas con colorantes antes de tomar la fotografía.</ion-item>
-    </ion-list>
-  </ion-toolbar>
-  <ion-button  [routerLink]="[ '/foto' ]" expand="block">Siguiente</ion-button>
-</ion-content>
-
-
+  </ion-content>
+</div>

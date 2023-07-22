@@ -1,0 +1,69 @@
+ion-content.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+/* Ajuste del contenedor de ion-content */
+ion-content {
+  --background: transparent; /* Para hacer transparente el fondo si es necesario */
+}
+
+/* Centrar contenido verticalmente */
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Estilo opcional para el mensaje del ion-toast */
+ion-toast {
+  --background: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+/* Estilos para los botones y el texto en el centro */
+.ion-padding {
+  padding: 20px;
+}
+
+.ion-text-center {
+  text-align: center;
+}
+
+/* Estilo para el botón "Enviar foto" */
+#open-loading {
+  margin-bottom: 10px;
+}
+
+/* Estilo opcional para el ícono de la cámara */
+ion-icon[name='camera-outline'] {
+  font-size: 32px; /* Ajusta el tamaño del ícono según tus necesidades */
+}
+
+/* Estilo opcional para la imagen capturada */
+ion-card img {
+  width: 100%;
+  height: auto;
+  max-width: 300px; /* Ajusta el tamaño máximo de la imagen según tus necesidades */
+  display: block;
+  margin: 0 auto;
+}
+
+/* Estilo para el mensaje en el ion-card */
+ion-card-content {
+  text-align: center;
+}
+
+/* Estilo para el botón "Imágenes procesadas" */
+.colorB {
+  --ion-color-primary: #007bff; /* Cambia el color del botón según tus necesidades */
+}
+
+/* Opcional: Estilo para el mensaje de procesando */
+ion-loading {
+  --ion-background-color: rgba(0, 0, 0, 0.8);
+  --ion-spinner-color: white;
+}

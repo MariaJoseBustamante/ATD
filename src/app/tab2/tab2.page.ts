@@ -13,6 +13,8 @@ export class Tab2Page  implements OnInit{
   // private id?:number;
   public data:any;
 
+  public seeInfo = false;
+
    constructor(private atdService:AtdService) {
   //   console.log("rutas",activatedroute.snapshot)
   //   console.log("params",activatedroute.snapshot.params)

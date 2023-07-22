@@ -41,18 +41,19 @@ export class Tab1Page implements OnInit {
       console.log(resp);
       this.data = {
         ...resp.data,
-       // name_recortada:'http://172.16.210.207:8000/' + resp.data.name_recortada,
-        //paleta_colores:'http://172.16.210.207:8000/' + resp.data.paleta_colores,
-        //color_dominante: 'http://172.16.210.207:8000/' + resp.data.color_dominante,
-        //saburra: 'http://172.16.210.207:8000/' + resp.data.saburra,
-        //porcentaje:'http://172.16.210.2017:8000/' + resp.data.porcentaje
+        name_recortada:'http://192.168.0.185:8000/' + resp.data.name_recortada,
+       paleta_colores:'http://192.168.0.185:8000/' + resp.data.paleta_colores,
+       color_dominante: 'http://192.168.0.185:8000/' + resp.data.color_dominante,
+       saburra: 'http://192.168.0.185:8000/' + resp.data.saburra,
+       textura: 'http://192.168.0.185:8000/' + resp.data.textura,
+       porcentaje:'' + resp.data.porcentaje
 
-        name_recortada:'http://192.168.100.18:8000/' + resp.data.name_recortada,
-        paleta_colores:'http://192.168.100.18:8000/' + resp.data.paleta_colores,
-        color_dominante: 'http://192.168.100.18:8000/' + resp.data.color_dominante,
-        saburra: 'http://192.168.100.18:8000/' + resp.data.saburra,
-        textura: 'http://192.168.100.18:8000/' + resp.data.textura,
-        porcentaje:''+resp.data.porcentaje
+        //name_recortada:'http://192.168.100.18:8000/' + resp.data.name_recortada,
+        //paleta_colores:'http://192.168.100.18:8000/' + resp.data.paleta_colores,
+        //color_dominante: 'http://192.168.100.18:8000/' + resp.data.color_dominante,
+        //saburra: 'http://192.168.100.18:8000/' + resp.data.saburra,
+        //textura: 'http://192.168.100.18:8000/' + resp.data.textura,
+        //porcentaje:''+resp.data.porcentaje
 
         //name_recortada:'http://192.168.1.45:8000/' + resp.data.name_recortada,
         //paleta_colores:'http://192.168.1.45:8000/' + resp.data.paleta_colores,

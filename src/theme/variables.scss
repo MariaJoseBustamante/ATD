@@ -2,7 +2,10 @@
 // http://ionicframework.com/docs/theming/
 
 /** Ionic CSS Variables **/
+
 :root {
+  --miColor: #a775f8;
+
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
@@ -83,6 +86,7 @@
    */
 
   body {
+    --ion-color-miColor: #a775f8;
     --ion-color-primary: #428cff;
     --ion-color-primary-rgb: 66,140,255;
     --ion-color-primary-contrast: #ffffff;
@@ -153,6 +157,7 @@
    */
 
   .ios body {
+    --ion-color-miColor: #a775f8;
     --ion-background-color: #000000;
     --ion-background-color-rgb: 0,0,0;
 
@@ -197,6 +202,7 @@
    */
 
   .md body {
+    --ion-color-miColor: #a775f8;
     --ion-background-color: #121212;
     --ion-background-color-rgb: 18,18,18;
 

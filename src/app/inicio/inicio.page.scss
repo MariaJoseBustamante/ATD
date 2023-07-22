@@ -1,3 +1,62 @@
-ion-title.ion-text-center {
-  text-align: center;
+
+@import "../../theme/variables.scss";
+
+img {
+  padding: 10px 20px;
+  max-width: 200px;
 }
+
+ion-text{
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--miColor);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.textName{
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* styles.css */
+
+/* Set the height of the ion-content to fill the entire screen */
+ion-content {
+  height: 100%;
+}
+
+/* Center the content vertically */
+ion-content > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Add some spacing to the elements */
+ion-content ion-text {
+  padding: 10px 0;
+}
+
+ion-content img {
+  margin: 20px 0;
+}
+
+/* Style the buttons */
+ion-content ion-button {
+  margin: 10px 0;
+}
+
+/* Position the names at the bottom of the screen */
+ion-content > div > div:last-child {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 15px;
+}
+
+
