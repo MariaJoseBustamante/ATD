@@ -5,7 +5,8 @@
 export const environment = {
   //urlbackend:"http://192.168.100.18:8000/",
   //urlbackend:"http://192.168.71.58:8000/",
-  //urlbackend:"http://192.168.1.45:8000/",
+  //urlbackend:"http://192.168.1.23:8000/",
+  //urlbackend:"http://192.168.99.58:8000/",
   urlbackend:"http://192.168.0.185:8000/",
   production: false
 };

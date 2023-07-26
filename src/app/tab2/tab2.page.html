@@ -1,7 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title class="ion-text-center">
-      saburra
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,7 +8,12 @@
 <ion-content [fullscreen]="true">
   <ion-card class="ion-text-center">
     <ion-card-title class="textColor">SABURRA
-      <ion-icon (click)="seeInfo = !seeInfo" name="help-outline" style="border-radius: 50%; background-color: orange"></ion-icon>
+      <ion-card>
+        <ion-card-content>
+          La saburra es la fina capa que cubre la lengua y que habitualmente tiene un color tenue blanquecino o blanco transparente.
+        </ion-card-content>
+      </ion-card>
+      <!-- <ion-icon (click)="seeInfo = !seeInfo" name="help-outline" style="border-radius: 50%; background-color: orange"></ion-icon> -->
     </ion-card-title>
     <img  [src]="data.saburra" alt="Image"/>
   </ion-card>
@@ -25,11 +29,11 @@
   </ion-card>
   <ion-header collapse="condense">
     <ion-toolbar>
-      <div *ngIf="seeInfo" style="padding: 10px 15px; ">
+      <!-- <div *ngIf="seeInfo" style="padding: 10px 15px; ">
         <p style="font-size: 14px;">
           La saburra es la fina capa que cubre la lengua y que habitualmente tiene un color tenue blanquecino o blanco transparente.
         </p>
-      </div>
+      </div> -->
     </ion-toolbar>
   </ion-header>
 </ion-content>

@@ -13,7 +13,7 @@ export class Tab2Page  implements OnInit{
   // private id?:number;
   public data:any;
 
-  public seeInfo = false;
+  //public seeInfo: boolean= false;
 
    constructor(private atdService:AtdService) {
   //   console.log("rutas",activatedroute.snapshot)
@@ -29,23 +29,6 @@ export class Tab2Page  implements OnInit{
   this.data = this.atdService.data;
 
   }
-  // async cargar(){
-  //   try {
-  //     let resp:any= await firstValueFrom(this.tongueservice.getListImagesdetalle(this.id as number));
-  //     console.log(resp)
-  //     this.data = {
-  //       ...resp.data,
-  //       name_recortada:"http://192.168.100.18:8000/"+resp.data.name_recortada,
-  //       //paleta_colores:"http://172.16.212.42:8000/"+resp.data.paleta_colores
-  //       }
-  //       console.log(this.data)
-  //   } catch (error: any) {
-  //     console.log(error);
-
-  //     // this.mensajeDeError(JSON.stringify(error));
-  //     // this.data = error;
-  //   }
-  // }
 
 }
 
